@@ -31,7 +31,7 @@ function Login() {
   const handleLogin = e => {
     e.preventDefault();
     axios
-      .post('http://13.125.228.177:8000/users/account1', { email, password })
+      .post('http://13.209.43.32:8000/users/account1', { email, password })
       .then(res => {
         if (res.status == 200) {
           localStorage.setItem('token', res.data.token);

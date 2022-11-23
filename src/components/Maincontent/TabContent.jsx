@@ -20,7 +20,7 @@ function TabContent({
   //최종API (사이드필터 및 mini필터)
   const filtering = pageNumber => {
     fetch(
-      `http://13.125.228.177:8000/products/${tabId}?sorted_by=${pageNumber}`,
+      `http://13.209.43.32:8000/products/${tabId}?sorted_by=${pageNumber}`,
       {
         method: 'POST',
         headers: { 'content-Type': 'application/json' },
@@ -36,7 +36,7 @@ function TabContent({
   const newfilterging = newNumber => {
     const sorted_by = searchParms.get('sorted_by');
     fetch(
-      `http://13.125.228.177:8000/products/${tabId}?sorted_by=${sorted_by}&category_id=${newNumber}`,
+      `http://13.209.43.32:8000/products/${tabId}?sorted_by=${sorted_by}&category_id=${newNumber}`,
       {
         method: 'POST',
         headers: { 'content-Type': 'application/json' },

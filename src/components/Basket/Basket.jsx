@@ -25,7 +25,7 @@ function Basket({ cart, converPrice, setCart }) {
 
   const payment = () => {
     if (getToken !== null) {
-      fetch('http://13.125.228.177:8000/products/order', {
+      fetch('http://13.209.43.32:8000/products/order', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

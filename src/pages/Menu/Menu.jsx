@@ -15,7 +15,7 @@ function Menu({ data, setData, setSearch, converPrice, search }) {
 
   //최종 API(각탭별 new,best,cheap)
   useEffect(() => {
-    fetch(`http://13.125.228.177:8000/products/${tabId}`, {
+    fetch(`http://13.209.43.32:8000/products/${tabId}`, {
       method: 'POST',
       headers: { 'content-Type': 'application/json' },
     })
@@ -25,7 +25,7 @@ function Menu({ data, setData, setSearch, converPrice, search }) {
 
   //가짜 목데이터
   // useEffect(() => {
-  //   fetch(`http://13.125.228.177:3000/data/mock${tabId}.json`)
+  //   fetch(`http://13.209.43.32:3000/data/mock${tabId}.json`)
   //     .then(res => res.json())
   //     .then(res => setTabList(res.data));
   // }, [tabId]);
