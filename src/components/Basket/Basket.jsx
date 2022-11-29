@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Basket.scss';
 import ProductList from './ProductList';
+import { BASE_URL } from '../../config';
 function Basket({ cart, converPrice, setCart }) {
   // const [liveValue, setLiveValue] = useState(0);
 
@@ -25,7 +26,7 @@ function Basket({ cart, converPrice, setCart }) {
 
   const payment = () => {
     if (getToken !== null) {
-      fetch('http://13.209.43.32:8000/products/order', {
+      fetch(`http://${BASE_URL}:8000/products/order`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

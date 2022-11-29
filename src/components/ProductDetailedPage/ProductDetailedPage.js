@@ -8,6 +8,7 @@ import Reviews from './Reviews';
 import BoardOne from './BoardOne';
 import BoardTwo from './BoardTwo';
 import SelectDown from './SelectDown';
+import { BASE_URL } from '../../config';
 
 function ProductDetailedPage({ converPrice }) {
   const params = useParams();
@@ -82,7 +83,7 @@ function ProductDetailedPage({ converPrice }) {
   const wishCountHandler = () => {
     wishAddHandler();
     if (!isWishAdd) {
-      fetch('http://13.209.43.32:8000/like/addlike', {
+      fetch(`http://${BASE_URL}:8000/like/addlike`, {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
@@ -94,7 +95,7 @@ function ProductDetailedPage({ converPrice }) {
       });
       alert('찜 목록에 추가되었습니다');
     } else if (isWishAdd) {
-      fetch('http://13.209.43.32:8000/like/removelike', {
+      fetch(`http://${BASE_URL}:8000/like/removelike`, {
         method: 'DELETE',
         headers: {
           'Content-type': 'application/json',
@@ -114,7 +115,7 @@ function ProductDetailedPage({ converPrice }) {
   const cartCountHandler = () => {
     cartAddHandler();
     if (!isCartAdd) {
-      fetch('http://13.209.43.32:8000/cart/update', {
+      fetch(`http://${BASE_URL}:8000/cart/update`, {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',

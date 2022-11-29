@@ -8,6 +8,8 @@ import {
 import { useNavigate } from 'react-router-dom';
 import Post from './Post';
 
+import { BASE_URL } from '../../config';
+
 //이메일.비밀번호 정규표현식
 const EMAIL_REGEX = /^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 const PWD_REGEX =
@@ -58,7 +60,7 @@ function Signup() {
   const sendHandler = e => {
     console.log(submitPrevent);
     e.preventDefault();
-    fetch('http://13.209.43.32:8000/users/account', {
+    fetch(`http://${BASE_URL}:8000/users/account`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -155,7 +157,7 @@ function Signup() {
     if (!validEmail) {
       alert('이메일 형식이 아닙니다.');
     } else {
-      fetch('http://13.209.43.32:8000/users/account2', {
+      fetch(`http://${BASE_URL}:8000/users/account2`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
