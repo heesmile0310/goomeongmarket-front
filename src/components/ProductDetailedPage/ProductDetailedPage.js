@@ -26,7 +26,7 @@ function ProductDetailedPage({ converPrice }) {
   const reviewRef = useRef();
 
   useEffect(() => {
-    fetch(`http://13.209.43.32:8000/products/goods/${params.id}`, {
+    fetch(`http://${BASE_URL}:8000/products/goods/${params.id}`, {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
@@ -35,7 +35,7 @@ function ProductDetailedPage({ converPrice }) {
       .then(res => res.json())
       .then(result => setState(result.data))
       .then(() => setIsLoaded(true));
-    fetch(`http://13.209.43.32:8000/products/review/${params.id}`, {
+    fetch(`http://${BASE_URL}:8000/products/review/${params.id}`, {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',

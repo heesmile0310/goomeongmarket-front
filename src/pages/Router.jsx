@@ -8,7 +8,7 @@ import Mainbasket from './Mainbasket/Mainbasket';
 import Incart from '../components/Maincontent/Incart';
 import Post from '../components/Signup/Post';
 import ProductDetailedPage from '../components/ProductDetailedPage/ProductDetailedPage';
-
+import { BASE_URL } from '../config';
 function Router() {
   const converPrice = price => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -17,7 +17,7 @@ function Router() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   //API
-  const mockData = `http://13.209.43.32:8000/products/main`;
+  const mockData = `http://${BASE_URL}:8000/products/main`;
   //mock
   // const mockData = `http://13.209.43.32:3000/data/mockData.json`;
 
