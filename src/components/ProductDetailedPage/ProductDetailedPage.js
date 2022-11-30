@@ -26,7 +26,7 @@ function ProductDetailedPage({ converPrice }) {
   const reviewRef = useRef();
 
   useEffect(() => {
-    fetch(`http://${BASE_URL}:8000/products/goods/${params.id}`, {
+    fetch(`http://${BASE_URL}/products/goods/${params.id}`, {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
@@ -35,7 +35,7 @@ function ProductDetailedPage({ converPrice }) {
       .then(res => res.json())
       .then(result => setState(result.data))
       .then(() => setIsLoaded(true));
-    fetch(`http://${BASE_URL}:8000/products/review/${params.id}`, {
+    fetch(`http://${BASE_URL}/products/review/${params.id}`, {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
@@ -83,7 +83,7 @@ function ProductDetailedPage({ converPrice }) {
   const wishCountHandler = () => {
     wishAddHandler();
     if (!isWishAdd) {
-      fetch(`http://${BASE_URL}:8000/like/addlike`, {
+      fetch(`http://${BASE_URL}/like/addlike`, {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
@@ -95,7 +95,7 @@ function ProductDetailedPage({ converPrice }) {
       });
       alert('찜 목록에 추가되었습니다');
     } else if (isWishAdd) {
-      fetch(`http://${BASE_URL}:8000/like/removelike`, {
+      fetch(`http://${BASE_URL}/like/removelike`, {
         method: 'DELETE',
         headers: {
           'Content-type': 'application/json',
@@ -115,7 +115,7 @@ function ProductDetailedPage({ converPrice }) {
   const cartCountHandler = () => {
     cartAddHandler();
     if (!isCartAdd) {
-      fetch(`http://${BASE_URL}:8000/cart/update`, {
+      fetch(`http://${BASE_URL}/cart/update`, {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
