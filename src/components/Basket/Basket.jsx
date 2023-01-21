@@ -26,7 +26,7 @@ function Basket({ cart, converPrice, setCart }) {
 
   const payment = () => {
     if (getToken !== null) {
-      fetch(`http://${BASE_URL}/products/order`, {
+      fetch(`${BASE_URL}/products/order`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

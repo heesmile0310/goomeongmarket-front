@@ -17,7 +17,7 @@ function Router() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   //API
-  const mockData = `http://${BASE_URL}/products/main`;
+  const mockData = `${BASE_URL}/products/main`;
   //mock
   // const mockData = `http://13.209.43.32:3000/data/mockData.json`;
 

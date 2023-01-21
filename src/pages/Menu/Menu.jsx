@@ -16,7 +16,7 @@ function Menu({ data, setData, setSearch, converPrice, search }) {
 
   //최종 API(각탭별 new,best,cheap)
   useEffect(() => {
-    fetch(`http://${BASE_URL}/products/${tabId}`, {
+    fetch(`${BASE_URL}/products/${tabId}`, {
       method: 'POST',
       headers: { 'content-Type': 'application/json' },
     })

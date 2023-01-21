@@ -60,7 +60,7 @@ function Signup() {
   const sendHandler = e => {
     console.log(submitPrevent);
     e.preventDefault();
-    fetch(`http://${BASE_URL}/users/account`, {
+    fetch(`${BASE_URL}/users/account`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -157,7 +157,7 @@ function Signup() {
     if (!validEmail) {
       alert('이메일 형식이 아닙니다.');
     } else {
-      fetch(`http://${BASE_URL}/users/account2`, {
+      fetch(`${BASE_URL}/users/account2`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
